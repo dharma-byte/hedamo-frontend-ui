@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hedamo Product Disclosures</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Product Disclosures</h1>
+
+    <!-- Controls row: search + filters + sort -->
+    <div class="controls">
+      <input id="search" placeholder="Search products..." />
+
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="Packaging">Packaging</option>
+        <option value="Chemicals">Chemicals</option>
+      </select>
+
+      <select id="statusFilter">
+        <option value="">All Status</option>
+        <option value="Draft">Draft</option>
+        <option value="Submitted">Submitted</option>
+        <option value="Published">Published</option>
+      </select>
+
+      <!-- NEW: Sorting -->
+      <select id="sortSelect">
+        <option value="">Sort by</option>
+        <option value="name">Name (A–Z)</option>
+        <option value="date">Newest first</option>
+      </select>
+    </div>
+
+    <!-- Skeleton loading container -->
+    <div id="skeletonGrid" class="grid hidden"></div>
+
+    <!-- Real product grid -->
+    <div id="productGrid" class="grid"></div>
+
+    <div id="detailView" class="detail hidden">
+      <button onclick="goBack()">← Back</button>
+      <h2 id="detailName"></h2>
+
+      <div class="box">
+        <p><strong>Declared by:</strong> <span id="declaredBy"></span></p>
+        <p><strong>Declared on:</strong> <span id="declaredOn"></span></p>
+        <p><strong>Evidence attached:</strong> <span id="evidence"></span></p>
+      </div>
+
+      <h3>Version History</h3>
+      <ul id="versionList"></ul>
+
+      <div class="disclaimer">
+        This page presents producer-declared information; it is not certification or verification.
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
